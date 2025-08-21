@@ -4,7 +4,7 @@ import drag from "../assets/drag.png";
 
 import { useMyContext } from "../context/Context";
 
-const SortByField = ({ filterFunction }) => {
+const SortByField = () => {
   const { state, handleState } = useMyContext();
 
   const [draggedIdx, setDraggedIdx] = useState(null);
@@ -22,11 +22,7 @@ const SortByField = ({ filterFunction }) => {
     updated.splice(idx, 0, removed);
     handleState({ fields: updated });
     setDraggedIdx(null);
-    filterFunction();
   };
-  useEffect(() => {
-    filterFunction();
-  }, [state.fields]);
 
   return (
     <>

@@ -99,6 +99,7 @@ const Content = () => {
     state.sortBy.updatedAt,
     state.filterBy.status,
     state.filterBy.updatedBy,
+    state.fields,
   ]);
 
   useEffect(() => {
@@ -307,7 +308,7 @@ const Content = () => {
                 (state.openModalFilter && "Filter By")}
             </div>
             {state.openModal ? (
-              <SortByField filterFunction={filterFunction} />
+              <SortByField />
             ) : state.openModalAdd ? (
               <AddClient />
             ) : state.openModalFilter ? (
